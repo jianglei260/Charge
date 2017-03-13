@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="com.wuxian.charge.login.LoginViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.wuxian.charge.login.LoginActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="316px"
+                android:layout_height="64px"
+                android:layout_margin="16dp"
+                android:background="@drawable/shape_button"
+                android:gravity="center"
+                app:backgroundTint="@color/button_green"
+                app:clickCommand="@{loginViewModel.qrcodeClick}">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_button"
+                    android:drawableLeft="@drawable/scan_login"
+                    android:drawablePadding="4dp"
+                    android:text="扫码登录"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+
+                    app:drawable_height="24dp"
+                    app:drawable_width="24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="316px"
+                android:layout_height="64px"
+                android:layout_margin="16dp"
+                android:background="@drawable/shape_button_blue"
+                android:gravity="center"
+                app:clickCommand="@{loginViewModel.fingerClick}">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_button_blue"
+                    android:drawableLeft="@drawable/fingerprint_login"
+                    android:drawablePadding="4dp"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:text="指纹登录"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+
+                    app:drawable_height="24dp"
+                    app:drawable_width="24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="316px"
+                android:layout_height="64px"
+                android:layout_margin="16dp"
+                android:background="@drawable/shape_button_red"
+                android:gravity="center"
+                app:clickCommand="@{loginViewModel.accountClick}">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_button_red"
+                    android:drawableLeft="@drawable/account_login"
+                    android:drawablePadding="4dp"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp"
+                    android:text="账号登录"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+
+                    app:drawable_height="24dp"
+                    app:drawable_width="24dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            style="@style/backButton"
+            app:clickCommand="@{loginViewModel.backClick}" />
+    </RelativeLayout>
+
+</layout>
+

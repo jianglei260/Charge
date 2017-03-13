@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="accountViewModel"
+            type="com.wuxian.charge.login.AccountViewModel" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_account_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.wuxian.charge.login.AccountLoginActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:gravity="center"
+                    android:text="用户名："
+                    android:textColor="@color/white"
+                    android:textSize="26sp" />
+
+                <EditText
+                    android:layout_width="318px"
+                    android:layout_height="45px"
+                    android:background="@drawable/shape_edite_text"
+                    android:gravity="center_vertical"
+                    android:hint="请输入登录账号"
+                    android:paddingLeft="16dp"
+                    android:text="@={accountViewModel.userName}"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="24sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:gravity="center"
+                    android:text="密    码："
+                    android:textColor="@color/white"
+                    android:textSize="26sp"  />
+
+                <EditText
+                    android:layout_width="318px"
+                    android:layout_height="45px"
+                    android:background="@drawable/shape_edite_text"
+                    android:gravity="center_vertical"
+                    android:hint="请输入登录密码"
+                    android:inputType="textPassword"
+                    android:paddingLeft="16dp"
+                    android:text="@={accountViewModel.passWord}"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="24sp"/>
+
+            </LinearLayout>
+            <Button
+                android:layout_width="235px"
+                android:layout_height="50px"
+                android:background="@drawable/shape_button"
+                app:backgroundTint="@color/button_green"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="确认登录"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                android:layout_gravity="center_horizontal"
+                app:clickCommand="@{accountViewModel.loginClick}"
+                android:layout_marginTop="60px"/>
+
+        </LinearLayout>
+        <ImageView
+            style="@style/backButton"
+            app:clickCommand="@{accountViewModel.backClick}" />
+
+    </RelativeLayout>
+</layout>
+
